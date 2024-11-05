@@ -1,35 +1,55 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import {useRef, useLayoutEffect, useState } from 'react';
+import './App.css';
 
 function App() {
-  const [count, setCount] = useState(0)
+  const circleRef = useRef<HTMLUListElement>(null); 
+  const [eventList, setEventList] = useState([
+    { id: 1, title: '', style: {}, styleButton: {} }, //История
+    { id: 2, title: 'Наука', style: {}, styleButton: {} }, //Наука
+    { id: 3, title: '', style: {}, styleButton: {} }, //Кино
+    { id: 4, title: '', style: {}, styleButton: {} },
+    { id: 5, title: '', style: {}, styleButton: {} }, //Литература
+    { id: 6, title: '', style: {}, styleButton: {} },
+    // { id: 7, title: '', style: {} },
+    // { id: 8, title: '', style: {} }, //Литература
+    // { id: 9, title: '', style: {} },
+  ]);
+
+  useLayoutEffect(() => { 
+    const circle = circleRef.current;
+    if (circle) { 
+      const sectorAngle = 360 / eventList.length;
+
+      setEventList((prevEventList) =>
+        prevEventList.map((event, index) => {
+          const angle = sectorAngle * index+75;
+          console.log(angle+' '+index)
+          return {
+            ...event,
+            style: {
+              transform: ` rotate(${angle}deg)`,
+              transformOrigin: '100% 100%',
+            },
+            styleButton: {transform: ` rotate(${-angle}deg)`,}
+          };
+        })
+      );
+    }
+  }, []); 
 
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <ul className="circle-menu" ref={circleRef}>
+        {eventList.map((event) => (
+          <li key={event.id} className="circle-item" style={event.style}>            
+            <button className='buttonTitle' style={event.styleButton}>
+              {event.id}
+            </button>
+          </li>
+        ))}
+      </ul>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
