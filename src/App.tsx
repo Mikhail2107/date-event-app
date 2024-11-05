@@ -4,16 +4,14 @@ import './App.css';
 function App() {
   const circleRef = useRef<HTMLUListElement>(null); 
   const [eventList, setEventList] = useState([
-    { id: 1, title: '', style: {}, styleButton: {} }, //История
-    { id: 2, title: 'Наука', style: {}, styleButton: {} }, //Наука
+    { id: 1, title: 'История', style: {}, styleButton: {} }, //История
+    { id: 2, title: '', style: {}, styleButton: {} }, //Наука
     { id: 3, title: '', style: {}, styleButton: {} }, //Кино
     { id: 4, title: '', style: {}, styleButton: {} },
     { id: 5, title: '', style: {}, styleButton: {} }, //Литература
     { id: 6, title: '', style: {}, styleButton: {} },
-    // { id: 7, title: '', style: {} },
-    // { id: 8, title: '', style: {} }, //Литература
-    // { id: 9, title: '', style: {} },
   ]);
+  const [menuRotate, setMenuRotate] = useState({style: {}})
 
   useLayoutEffect(() => { 
     const circle = circleRef.current;
@@ -30,21 +28,34 @@ function App() {
               transform: ` rotate(${angle}deg)`,
               transformOrigin: '100% 100%',
             },
-            styleButton: {transform: ` rotate(${-angle}deg)`,}
+            styleButton: {transform: ` rotate(${-75}deg)`,}
           };
         })
       );
     }
   }, []); 
 
+  const handleRotateMenu = (id: number) => {
+    
+    const deg = (id-1) * 60
+    setMenuRotate({style: {transform: `rotate(-${deg}deg)`}})
+    console.log(`click ${deg}`, id)
+  }
+
   return (
     <>
-      <ul className="circle-menu" ref={circleRef}>
+      <ul className="circle-menu" ref={circleRef} style={menuRotate.style}>
         {eventList.map((event) => (
-          <li key={event.id} className="circle-item" style={event.style}>            
-            <button className='buttonTitle' style={event.styleButton}>
-              {event.id}
-            </button>
+          <li key={event.id} className="circle-item" style={event.style}>
+            <div className='circle-info'
+                style={event.styleButton}>            
+              <button className='buttonTitle'
+                onClick={() => handleRotateMenu(event.id)}
+                >
+                {event.id}
+              </button>
+            </div>
+              <span>{event.title}</span>
           </li>
         ))}
       </ul>
