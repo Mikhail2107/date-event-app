@@ -8,8 +8,7 @@
   position: absolute;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  border: 1px solid #42567A;
-  opacity: 0.1;
+  border: 1px solid rgba(66, 86, 122, 0.1);  
   width: 100%;
   height: 100%;
 }
@@ -18,6 +17,9 @@
   border: 1px solid rgba(66, 86, 122, 0.1);
   width: 100%;
   height: 100%;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
 }
 
 .history-title {
@@ -26,12 +28,11 @@
   height: 134px;
   font-weight: 700;
   font-size: 56px;
-  position: relative;
+  position: absolute;
   padding-left: 90px;
-  top: 170px;
   color: #42567A;
   box-sizing: border-box;
-  /* background-color: ; */
+  margin: 0;
 }
 
 .history-title::before {
@@ -74,7 +75,6 @@
   height: 50%;
   padding: 0;
   margin: 0;
-  /* border: 1px solid #42567A; */
 }
 
 .buttonTitle {
@@ -97,15 +97,11 @@
   padding: 0;
   margin: 55px;
   border: 1px solid #42567A;
-  background-color: white;
+  background-color: #F4F5F9;
   transform: scale(1);
   font-size: medium;
   transition: all 0.5s ease;
 }
-
-/* .circle-info {
-  overflow: hidden;
-} */
 
 .circle-info .buttonTitle.active {
   display: flex;
@@ -122,4 +118,121 @@
   margin-left: 50px;
   overflow: visible;
   transition: all 1s ease;
+}
+.history-pages-button {
+  display: grid;
+  grid-template-columns: 1fr;
+  width: 120px;
+  height: 88px;
+  margin-left: 100px;
+  position: absolute;
+}
+.buttons {
+  display: flex;
+}
+.pages-button {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 1px solid rgba(66, 86, 122, 0.5);
+  color: #42567A;
+  font-size: 24px;
+  text-align: center;
+  cursor: pointer;
+  margin: 0 10px;
+  position: relative;
+}
+.pages-button:active {
+  color:rgba(66, 86, 122, 0.5);
+}
+
+.button-prev::before,
+.button-next::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 24px;
+}
+
+.button-prev::before {
+  content: '';
+  width: 9px;
+  height: 9px;
+  border-left: 2px solid #42567A;
+  border-top: 2px solid #42567A;
+  transform: rotate(-45deg);
+  position: absolute; 
+  top: 50%; 
+  left: 50%;
+  transform-origin: 50% 50%; 
+  transform: translate(-50%, -50%) rotate(-45deg); 
+}
+
+.button-next::before {
+  content: '';
+  width: 9px;
+  height: 9px;
+  border-right: 2px solid #42567A;
+  border-bottom: 2px solid #42567A;
+  transform: rotate(45deg);
+  position: absolute; 
+  top: 50%; 
+  left: 50%; 
+  transform-origin: 50% 50%;
+  transform: translate(-50%, -50%) rotate(-45deg); 
+}
+
+.pages {
+  font-size: 18px;
+  color: #333;
+}
+
+.history-box {
+  position: absolute;
+  bottom: 0;
+  margin-left: 100px;
+}
+.history-period { 
+  width: 1000px;
+  height: 160px;
+  font-weight: 700;
+  font-size: 200px;
+  line-height: 160px;
+  position: absolute; 
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  gap: 100px;
+}
+.year-begin {
+  color: #3877EE;
+  }
+.year-end {
+  color: #EF5DA8;
+}
+.history-date-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+}
+.history-event {
+  display: flex;
+  flex-direction: column;
+  width: 320px;
+  height: 125px;
+}
+.history-year {
+  width: 41px;
+  height: 30px;
+  font-size: 25px;
+  font-weight: 400;
+  color: rgba(56, 119, 238, 1);
+}
+.history-year-description {
+  font-size: 20px;
+  font-weight: 400;
+  color: rgba(66, 86, 122, 1);
 }

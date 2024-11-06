@@ -1,8 +1,17 @@
-
+@font-face {
+  font-family: 'PTSans';
+  font-style:  normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/date-event-app/src/fonts/PTSans-Regular.ttf') format("ttf");
+}
 body {
   display: flex;
   justify-content: center;
   align-items: center;
-  
+  background-color: #F4F5F9;
+  font: 14px 'PTSans', Helvetica, Arial, sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
