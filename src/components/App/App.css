@@ -189,12 +189,12 @@
   color: #333;
 }
 
-.history-box {
+/* .history-box {
   position: absolute;
   bottom: 0;
   margin-left: 100px;
-}
-.history-period { 
+} */
+/* .history-period { 
   width: 1000px;
   height: 160px;
   font-weight: 700;
@@ -212,8 +212,8 @@
   }
 .year-end {
   color: #EF5DA8;
-}
-.history-date-list {
+} */
+/* .history-date-list {
   list-style: none;
   padding: 0;
   display: flex;
@@ -235,4 +235,4 @@
   font-size: 20px;
   font-weight: 400;
   color: rgba(66, 86, 122, 1);
-}
+} */

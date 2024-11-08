@@ -1,0 +1,19 @@
+.history-period { 
+    width: 1000px;
+    height: 160px;
+    font-weight: 700;
+    font-size: 200px;
+    line-height: 160px;
+    position: absolute; 
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    gap: 100px;
+  }
+  .year-begin {
+    color: #3877EE;
+    }
+  .year-end {
+    color: #EF5DA8;
+  }
