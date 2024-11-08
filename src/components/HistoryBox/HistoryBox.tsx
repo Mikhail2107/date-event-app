@@ -1,6 +1,6 @@
 import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css"; 
-import "swiper/css/navigation";
+import "swiper/swiper-bundle.css"; 
+// import "swiper/css/navigation";
 import { Navigation, Mousewheel, Keyboard } from 'swiper/modules';
 
 import './HistoryBox.css';
