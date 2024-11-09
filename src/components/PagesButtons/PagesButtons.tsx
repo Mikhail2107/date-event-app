@@ -1,6 +1,4 @@
-
-import './PagesButtons.css';
-
+import './PagesButtons.scss';
 interface GridContainerProps {
   activeId: number;
   eventList: {

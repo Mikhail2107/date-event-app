@@ -6,7 +6,7 @@ import GridContainer from '../GridContainer/GridContainer';
 import CircleMenu from '../CircleMenu/CircleMenu';
 import historyDate from '../../historyDate';
 
-import './App.css';
+import './App.scss';
 import PagesButtons from '../PagesButtons/PagesButtons';
 import HistoryTitle from '../HistoryTitle/HistoryTitle';
 

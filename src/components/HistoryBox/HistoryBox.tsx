@@ -1,9 +1,9 @@
 import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/swiper-bundle.css"; 
-// import "swiper/css/navigation";
+import "swiper/swiper-bundle.css";  
+
 import { Navigation, Mousewheel, Keyboard, Pagination } from 'swiper/modules';
 
-import './HistoryBox.css';
+import './HistoryBox.scss';
 import './swiper.scss';
 import { useRef } from "react";
 import { useMediaQuery } from 'react-responsive';

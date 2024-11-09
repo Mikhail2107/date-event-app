@@ -1,4 +1,4 @@
-import './GridContainer.css';
+import './GridContainer.scss';
 
 
 function GridContainer() {

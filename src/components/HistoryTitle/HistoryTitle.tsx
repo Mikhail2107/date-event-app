@@ -1,4 +1,4 @@
-import './HistoryTitle.css';
+import './HistoryTitle.scss';
 
 function HistoryTitle(){
     return (

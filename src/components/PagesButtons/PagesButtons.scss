@@ -6,11 +6,25 @@
   margin-left: 100px;
   position: absolute;
   bottom: 250px;
+
+  @media (max-width: 500px) {
+    width: 58px;
+    height: 50px;
+    margin: 0 auto;
+    bottom: 0;
+    z-index: 100;
+  }
 }
+
 .buttons {
   display: flex;
   gap: 10px;
+
+  @media (max-width: 500px) {
+    display: flex; 
+  }
 }
+
 .pages-button {
   width: 50px;
   height: 50px;
@@ -21,9 +35,15 @@
   text-align: center;
   cursor: pointer;
   position: relative;
-}
-.pages-button:active {
-  color:rgba(66, 86, 122, 0.5);
+
+  @media (max-width: 500px) {
+    width: 25px;
+    height: 25px;
+  }
+
+  &:active {
+    color: rgba(66, 86, 122, 0.5);
+  }
 }
 
 .button-prev::before,
@@ -43,11 +63,16 @@
   border-left: 2px solid #42567A;
   border-top: 2px solid #42567A;
   transform: rotate(-45deg);
-  position: absolute; 
-  top: 50%; 
+  position: absolute;
+  top: 50%;
   left: 50%;
-  transform-origin: 50% 50%; 
-  transform: translate(-50%, -50%) rotate(-45deg); 
+  transform-origin: 50% 50%;
+  transform: translate(-50%, -50%) rotate(-45deg);
+
+  @media (max-width: 500px) {
+    width: 6px;
+    height: 6px;
+  }
 }
 
 .button-next::before {
@@ -57,45 +82,23 @@
   border-right: 2px solid #42567A;
   border-bottom: 2px solid #42567A;
   transform: rotate(45deg);
-  position: absolute; 
-  top: 50%; 
-  left: 50%; 
+  position: absolute;
+  top: 50%;
+  left: 50%;
   transform-origin: 50% 50%;
-  transform: translate(-50%, -50%) rotate(-45deg); 
+  transform: translate(-50%, -50%) rotate(-45deg);
+
+  @media (max-width: 500px) {
+    width: 6px;
+    height: 6px;
+  }
 }
+
 .pages {
   font-size: 18px;
   color: #333;
-}
 
-@media (max-width:500px) {
-  .history-pages-button {
-    position: absolute;
-    width: 58px;
-    height: 50px;
-    margin: 0px auto;
-    bottom: 0;
-    z-index: 100;
-  }
-  .pages-button {
-    width: 25px;
-    height: 25px;    
-  }
-  .button-prev::before {
-    content: '';
-    width: 6px;
-    height: 6px;
-  }
-  
-  .button-next::before {
-    content: '';
-    width: 6px;
-    height: 6px;
-  }
-  .buttons {
-    display: flex;
-  }     
-  .pages {
+  @media (max-width: 500px) {
     font-size: 14px;
-  }      
   }
+}

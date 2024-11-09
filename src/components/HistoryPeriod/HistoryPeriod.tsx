@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 
-import './HistoryPeriod.css';
-
+import './HistoryPeriod.scss';
 interface HistoryPeriodProps {
   activeId: number; 
   historyDate: {

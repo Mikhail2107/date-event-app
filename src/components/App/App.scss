@@ -2,14 +2,11 @@
   width: 1440px;
   height: 1080px;
   position: relative;
-}
 
-@media (max-width:500px) {
-  .history-container {
+  @media (max-width: 500px) {
     display: block;
     width: 320px;
     height: 568px;
-    position: relative;
     padding: 20px;
   }
 }

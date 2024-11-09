@@ -1,6 +1,6 @@
 
 
-import './CircleMenu.css'
+import './CircleMenu.scss'
 
 
 interface CircleMenuProps {
