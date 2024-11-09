@@ -7,6 +7,8 @@ import CircleMenu from '../CircleMenu/CircleMenu';
 import historyDate from '../../historyDate';
 
 import './App.css';
+import PagesButtons from '../PagesButtons/PagesButtons';
+import HistoryTitle from '../HistoryTitle/HistoryTitle';
 
 
 interface MenuRotate {
@@ -76,23 +78,23 @@ function App() {
   return (
     <>
     <div className="history-container">
-      <GridContainer activeId={activeId} 
-            eventList={eventList} 
-            handleNextPage={handleNextPage} 
-            handlePrevPage={handlePrevPage} />      
-      
+      <GridContainer /> 
+      <HistoryTitle />
       <CircleMenu circleRef={circleRef}             
             menuRotate={menuRotate} 
             eventList={eventList} 
             activeId={activeId} 
-            handleRotateMenu={handleRotateMenu} />      
+            handleRotateMenu={handleRotateMenu} /> 
       <HistoryPeriod 
           activeId={activeId} 
           historyDate={historyDate} 
-        />    
+        />
+      <PagesButtons activeId={activeId} 
+            eventList={eventList} 
+            handleNextPage={handleNextPage} 
+            handlePrevPage={handlePrevPage} />   
       <HistoryBox activeId={activeId} 
         historyDate={historyDate} />
-      
     </div>   
     </>
   );
